@@ -41,6 +41,18 @@ public class User_Registration
     }
 
 
+    public static void phoneNo(String phoneno){
+        Pattern pattern=Pattern.compile("^[0-9]{2} [0-9]{10}$");
+        Matcher matcher=pattern.matcher(phoneno);
+        boolean ismatch=matcher.matches();
+        if(ismatch){
+            System.out.println("Valid no");
+        }else {
+            System.out.println("Invalid no");
+        }
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         System.out.println("Enter the first name: ");
@@ -55,6 +67,8 @@ public class User_Registration
         String email=scanner.nextLine();
         email(email);
 
-
+        System.out.println("Enter the Number: ");
+        String phoneno=scanner.nextLine();
+        phoneNo(phoneno);
     }
 }
