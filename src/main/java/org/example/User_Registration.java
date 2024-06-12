@@ -18,10 +18,27 @@ public class User_Registration
     }
 
 
+    public static void lastname(String lastname){
+        Pattern pattern=Pattern.compile("[A-Z][a-z]{3,}");
+        Matcher matcher=pattern.matcher(lastname);
+        boolean ismatch=matcher.matches();
+        if (ismatch){
+            System.out.println("Valid input");
+        }else {
+            System.out.println("Invalid Input");
+        }
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Enter the name: ");
+        System.out.println("Enter the first name: ");
         String firstname=scanner.nextLine();
         firstname(firstname);
+
+        System.out.println("Enter  last the name: ");
+        String lastname=scanner.nextLine();
+        lastname(lastname);
+
     }
 }
