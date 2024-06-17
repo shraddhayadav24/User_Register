@@ -53,9 +53,9 @@ public class User_Registration
     }
 
 
-//    RULE 1
+
     public static void passwordCharacter( String password){
-        Pattern pattern=Pattern.compile("^(?=.*[A-Z]).{8,}$");
+        Pattern pattern=Pattern.compile("^(?=.*[A-Z])(?=.*\\d).{8,}$");
         Matcher matcher=pattern.matcher(password);
         boolean ismatch=matcher.matches();
         if (ismatch){
