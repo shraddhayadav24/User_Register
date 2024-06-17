@@ -64,8 +64,21 @@ public class User_Registration
     }
 
 
+    public static void passwordRule2 (String password2){
+        Pattern pattern=Pattern.compile("^?= . *?[A-Z].{8,}");
+        Matcher matcher=pattern.matcher(password2);
+        boolean ismatch=matcher.matches();
+        if (ismatch){
+            System.out.println("Valid input");
+        }else {
+            System.out.println("Invalid input");
+        }
+    }
+
+
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
+
         System.out.println("Enter the first name: ");
         String firstname=scanner.nextLine();
         firstname(firstname);
@@ -86,6 +99,8 @@ public class User_Registration
         String passwordChar=scanner.nextLine();
         passwordCharacter(passwordChar);
 
-
+        System.out.println("Enter the password");
+        String passwordRule2=scanner.nextLine();
+        passwordRule2(passwordRule2);
     }
 }
