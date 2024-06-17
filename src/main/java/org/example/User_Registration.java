@@ -52,6 +52,17 @@ public class User_Registration
         }
     }
 
+    public static void passwordCharacter( String password){
+        Pattern pattern=Pattern.compile("^[a-z]{8,}$");
+        Matcher matcher=pattern.matcher(password);
+        boolean ismatch=matcher.matches();
+        if (ismatch){
+            System.out.println("Valid input");
+        }else {
+            System.out.println("Invalid input");
+        }
+    }
+
 
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
@@ -70,5 +81,11 @@ public class User_Registration
         System.out.println("Enter the Number: ");
         String phoneno=scanner.nextLine();
         phoneNo(phoneno);
+
+        System.out.println("Enter the password with minimum 8 Character");
+        String passwordChar=scanner.nextLine();
+        passwordCharacter(passwordChar);
+
+
     }
 }
