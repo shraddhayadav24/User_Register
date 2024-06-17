@@ -63,7 +63,7 @@ public class User_Registration
         }
     }
 
-
+    //Atleast one uppercase letter
     public static void passwordRule2 (String password2){
         Pattern pattern=Pattern.compile("^?= . *?[A-Z].{8,}");
         Matcher matcher=pattern.matcher(password2);
@@ -72,6 +72,19 @@ public class User_Registration
             System.out.println("Valid input");
         }else {
             System.out.println("Invalid input");
+        }
+    }
+
+
+    //Atleast one numeric letter in password
+    public  static  void numericpassword(String password3){
+        Pattern pattern= Pattern.compile("^(?=.*[A-Z])(?=.*\\d).{8,}");
+        Matcher matcher=pattern.matcher(password3);
+        boolean ismatch=matcher.matches();
+        if (ismatch){
+            System.out.println("Valid input");
+        }else {
+            System.out.println("invalid input");
         }
     }
 
@@ -102,5 +115,12 @@ public class User_Registration
         System.out.println("Enter the password");
         String passwordRule2=scanner.nextLine();
         passwordRule2(passwordRule2);
+
+        System.out.println("Enter the password with atleast one numeric");
+        String passwordRule3=scanner.nextLine();
+        numericpassword(passwordRule3);
+
+
+        
     }
 }
