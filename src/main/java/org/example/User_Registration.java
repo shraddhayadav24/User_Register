@@ -77,13 +77,16 @@ public class User_Registration
         String lastname=scanner.nextLine();
         lastname(lastname);
 
-        System.out.println("Enter the email: ");
-        String email=scanner.nextLine();
-        email(email);
 
         System.out.println("Enter the Number: ");
         String phoneno=scanner.nextLine();
         phoneNo(phoneno);
+
+        for(int i=0;i<5;i++) {
+            System.out.println("Enter the email: ");
+            String email = scanner.nextLine();
+            email(email);
+        }
 
         System.out.println("Enter the password with minimum 8 Character");
         String passwordChar=scanner.nextLine();
