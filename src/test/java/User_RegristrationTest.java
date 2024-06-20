@@ -1,6 +1,8 @@
 import org.example.User_Registration;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import javax.swing.plaf.PanelUI;
 
@@ -68,5 +70,18 @@ public class User_RegristrationTest {
     public void checkPsswordInvalid(){
         String result=userRegistration.passwordCharacter("4bbyji7u");
         Assert.assertEquals(result,"Sad");
+    }
+
+
+    @ParameterizedTest
+    @ValueSource(strings={
+            "test@gmail.com",
+            "testexample@gmail.com",
+            "test-test@gmail.com",
+            "test.example@gmail.com"
+    })
+    public void ValidEmail(String email){
+        String result = userRegistration.email(email);
+        Assert.assertEquals(result,"Happy");
     }
 }
